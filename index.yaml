@@ -20,12 +20,12 @@ stacks:
     email: hyayi@us.ibm.com
     github-id: yharish991
   default-template: default
-  src: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.source.tar.gz
+  src: https://kubepia.github.io/skt-stack/download/skt-spring-boot2.v0.3.27.source.tar.gz
   templates:
   - id: default
-    url: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.templates.default.tar.gz 
+    url: https://kubepia.github.io/skt-stack/download/skt-spring-boot2.v0.3.27.templates.default.tar.gz 
   - id: kotlin
-    url: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.templates.kotlin.tar.gz
+    url: https://kubepia.github.io/skt-stack/download/skt-spring-boot2.v0.3.27.templates.kotlin.tar.gz
   requirements:
     docker-version: '>= 17.09.0'
     appsody-version: '>= 0.5.0'
