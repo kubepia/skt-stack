@@ -23,9 +23,9 @@ stacks:
   src: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.source.tar.gz
   templates:
   - id: default
-    url: 
+    url: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.templates.default.tar.gz 
   - id: kotlin
-    url: file:///Users/happycloudpak/.appsody/stacks/dev.local/skt-spring-boot2.v0.3.27.templates.kotlin.tar.gz
+    url: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.templates.kotlin.tar.gz
   requirements:
     docker-version: '>= 17.09.0'
     appsody-version: '>= 0.5.0'
