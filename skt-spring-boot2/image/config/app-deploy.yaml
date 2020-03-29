@@ -8,7 +8,7 @@ spec:
   applicationImage: APPSODY_DOCKER_IMAGE 
   stack: APPSODY_STACK
   serviceAccountName: serviceaccount
-  createKnativeService: failureThreshold
+  createKnativeService: false
   pullPolicy: Always
   #pullSecret: secret name to access private project on git  
   replicas: 1
@@ -40,19 +40,19 @@ spec:
     periodSeconds: 2
   expose: true
   env:
-  - name: JWT_SECRET
-    valueFrom:
-      secretKeyRef:
-        key: JWT_SECRET
-        name: jwt-secret
+  #- name: JWT_SECRET
+  #  valueFrom:
+  #    secretKeyRef:
+  #      key: JWT_SECRET
+  #      name: jwt-secret
   - name: AUTH_API_URI
     value: "http://login.apps.msg.darumtech.net"  
   resourceConstraints:
     limits:
       memory: 512Mi
-      cpu: 2
+      cpu: 2Gi
     requests:
-      cpu: 0.5
+      cpu: 0.5Gi
   autoscaling:
     targetCPUUtilizationPercentage: 50
     minReplicas: 1
