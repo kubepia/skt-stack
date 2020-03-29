@@ -1,0 +1,2 @@
+project-name: hello-appsody
+stack: dev.local/appsody/skt-spring-boot2:0.3
