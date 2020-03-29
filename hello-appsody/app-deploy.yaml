@@ -1,0 +1,86 @@
+apiVersion: appsody.dev/v1beta1
+kind: AppsodyApplication
+metadata:
+  annotations:
+    commit.image.appsody.dev/author: user1 <user1@kebhana.com>
+    commit.image.appsody.dev/committer: user1 <user1@kebhana.com>
+    commit.image.appsody.dev/contextDir: /hello-appsody
+    commit.image.appsody.dev/date: Sun Mar 29 19:07:33 2020 +0900
+    commit.image.appsody.dev/message: change stack
+    commit.stack.appsody.dev/author: user1 <user1@kebhana.com>
+    commit.stack.appsody.dev/committer: user1 <user1@kebhana.com>
+    commit.stack.appsody.dev/contextDir: /skt-spring-boot2
+    commit.stack.appsody.dev/date: Sun Mar 29 18:10:36 2020 +0900
+    commit.stack.appsody.dev/message: change stack
+    image.opencontainers.org/created: "2020-03-30T02:53:12+09:00"
+    image.opencontainers.org/documentation: https://github.com/kubepia/skt-stack
+    image.opencontainers.org/revision: 0d7c80e050e162c691353656948fc4a003b77ab9-modified
+    image.opencontainers.org/source: https://github.com/kubepia/skt-stack/tree/master
+    image.opencontainers.org/url: https://github.com/kubepia/skt-stack
+    stack.appsody.dev/authors: Erin Schnabel <schnabel@us.ibm.com>, Ozzy Osborne <ozzy@ca.ibm.com>,
+      Richard Trotter <rtrotter@us.ibm.com>, Harish Yayi <hyayi@us.ibm.com>
+    stack.appsody.dev/configured: dev.local/appsody/skt-spring-boot2:0.3
+    stack.appsody.dev/created: "2020-03-29T19:04:09+09:00"
+    stack.appsody.dev/description: SKT-Spring Boot using OpenJ9 and Maven
+    stack.appsody.dev/documentation: https://github.com/kubepia/skt-stack/tree/master/skt-spring-boot2/README.md
+    stack.appsody.dev/licenses: Apache-2.0
+    stack.appsody.dev/revision: d67b095d5bc4f13e4606815ebbf070c656599509-modified
+    stack.appsody.dev/source: https://github.com/kubepia/skt-stack/tree/master/skt-spring-boot2/image
+    stack.appsody.dev/tag: dev.local/appsody/skt-spring-boot2:0.3.27
+    stack.appsody.dev/title: SKT-Spring Boot®
+    stack.appsody.dev/url: https://github.com/kubepia/skt-stack/tree/master/skt-spring-boot2
+  creationTimestamp: null
+  labels:
+    image.opencontainers.org/title: hello-appsody
+    stack.appsody.dev/id: skt-spring-boot2
+    stack.appsody.dev/version: 0.3.27
+  name: hello-appsody
+  namespace: default
+spec:
+  applicationImage: happycloudpak/hello-appsody
+  autoscaling:
+    maxReplicas: 4
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 50
+  createKnativeService: false
+  env:
+  - name: AUTH_API_URI
+    value: http://login.apps.msg.darumtech.net
+  expose: true
+  livenessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /actuator/liveness
+      port: 8080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  monitoring:
+    endpoints:
+    - path: /actuator/prometheus
+    labels:
+      k8s-app: hello-appsody
+  pullPolicy: Always
+  readinessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /actuator/health
+      port: 8080
+    initialDelaySeconds: 5
+    periodSeconds: 2
+    timeoutSeconds: 1
+  replicas: 1
+  resourceConstraints:
+    limits:
+      cpu: "2"
+      memory: 512Mi
+    requests:
+      cpu: "0.5"
+  service:
+    annotations:
+      prometheus.io/path: /actuator/prometheus
+      prometheus.io/scrape: "true"
+    port: 8080
+    type: ClusterIP
+  serviceAccountName: pipeline
+  stack: skt-spring-boot2
+  version: 1.0.0

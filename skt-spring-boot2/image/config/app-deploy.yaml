@@ -7,7 +7,6 @@ spec:
   version: 1.0.0
   applicationImage: APPSODY_DOCKER_IMAGE 
   stack: APPSODY_STACK
-  ## deploy할 serviceaccount: 버그인지 모르겠으나 지정하면 배포안됨
   #serviceAccountName: serviceaccount
   createKnativeService: false
   pullPolicy: Always
