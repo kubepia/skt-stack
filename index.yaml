@@ -1,0 +1,32 @@
+apiVersion: v2
+stacks:
+- id: skt-spring-boot2
+  name: SKT-Spring Boot®
+  version: 0.3.27
+  description: SKT-Spring Boot using OpenJ9 and Maven
+  license: Apache-2.0
+  language: java
+  maintainers:
+  - name: Erin Schnabel
+    email: schnabel@us.ibm.com
+    github-id: ebullient
+  - name: Ozzy Osborne
+    email: ozzy@ca.ibm.com
+    github-id: bardweller
+  - name: Richard Trotter
+    email: rtrotter@us.ibm.com
+    github-id: richard-trotter
+  - name: Harish Yayi
+    email: hyayi@us.ibm.com
+    github-id: yharish991
+  default-template: default
+  src: https://github.com/kubepia/skt-stack/blob/master/download/skt-spring-boot2.v0.3.27.source.tar.gz
+  templates:
+  - id: default
+    url: 
+  - id: kotlin
+    url: file:///Users/happycloudpak/.appsody/stacks/dev.local/skt-spring-boot2.v0.3.27.templates.kotlin.tar.gz
+  requirements:
+    docker-version: '>= 17.09.0'
+    appsody-version: '>= 0.5.0'
+  image: dev.local/appsody/skt-spring-boot2:0.3.27
