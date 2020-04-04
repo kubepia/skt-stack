@@ -1,24 +1,5 @@
 apiVersion: v2
 stacks:
-- id: skt-nodejs
-  name: Node.js
-  version: 0.3.3
-  description: SKT-Runtime for Node.js applications
-  license: Apache-2.0
-  language: nodejs
-  maintainers:
-  - name: Sam Roberts
-    email: vieuxtech@gmail.com
-    github-id: sam-github
-  default-template: simple
-  src: https://kubepia.github.io/skt-stack/download/skt-nodejs.v0.3.3.source.tar.gz
-  templates:
-  - id: simple
-    url: https://kubepia.github.io/skt-stack/download/skt-nodejs.v0.3.3.templates.simple.tar.gz
-  requirements:
-    docker-version: '>= 17.09.0'
-    appsody-version: '>= 0.2.7'
-  image: docker.io/happycloudpak/skt-nodejs:0.3.3
 - id: skt-nodejs-express
   name: Node.js Express
   version: 0.2.10
@@ -40,3 +21,27 @@ stacks:
   - id: scaffold
     url: https://kubepia.github.io/skt-stack/download/skt-nodejs-express.v0.2.10.templates.scaffold.tar.gz
   image: image-registry.openshift-image-registry.svc:5000/kabanero/skt-nodejs-express:0.2.10
+- id: skt-spring-boot2
+  name: Spring Boot®
+  version: 0.3.24
+  description: SKT-Spring Boot using OpenJ9 and Maven
+  license: Apache-2.0
+  language: java
+  maintainers:
+  - name: Erin Schnabel
+    email: schnabel@us.ibm.com
+    github-id: ebullient
+  - name: Ozzy Osborne
+    email: ozzy@ca.ibm.com
+    github-id: bardweller
+  default-template: default
+  src: https://kubepia.github.io/skt-stack/download/skt-spring-boot2.v0.3.24.source.tar.gz
+  templates:
+  - id: default
+    url: https://kubepia.github.io/skt-stack/download/skt-spring-boot2.v0.3.24.templates.default.tar.gz
+  - id: kotlin
+    url: https://kubepia.github.io/skt-stack/download/skt-spring-boot2.v0.3.24.templates.kotlin.tar.gz
+  requirements:
+    docker-version: '>= 17.09.0'
+    appsody-version: '>= 0.5.0'
+  image: image-registry.openshift-image-registry.svc:5000/kabanero/skt-spring-boot2:0.3.24
