@@ -1,2 +1,0 @@
-project-name: hello-nodejs
-stack: docker.io/happycloudpak/skt-nodejs:0.3
