@@ -1,2 +1,0 @@
-project-name: appsody-nodejs
-stack: docker.io/kabanero/nodejs:0.3
