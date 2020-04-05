@@ -20,7 +20,7 @@ stacks:
     url: https://kubepia.github.io/skt-stack/download/skt-nodejs-express.v0.2.10.templates.simple.tar.gz
   - id: scaffold
     url: https://kubepia.github.io/skt-stack/download/skt-nodejs-express.v0.2.10.templates.scaffold.tar.gz
-  image: image-registry.openshift-image-registry.svc:5000/kabanero/skt-nodejs-express:0.2.10
+  image: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/skt-nodejs-express:0.2.10
 - id: skt-spring-boot2
   name: Spring Boot®
   version: 0.3.24
@@ -44,4 +44,4 @@ stacks:
   requirements:
     docker-version: '>= 17.09.0'
     appsody-version: '>= 0.5.0'
-  image: image-registry.openshift-image-registry.svc:5000/kabanero/skt-spring-boot2:0.3.24
+  image: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/skt-spring-boot2:0.3.24
